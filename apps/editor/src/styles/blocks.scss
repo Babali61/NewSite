@@ -1,0 +1,61 @@
+// Styles minimaux des blocs (stub) — le thème pilote les tokens.
+
+.ns-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ns-space-md);
+}
+
+.ns-block--nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ns-space-sm);
+  padding-bottom: var(--ns-space-sm);
+  border-bottom: 1px solid color-mix(in srgb, var(--ns-color-text) 12%, transparent);
+}
+
+.ns-block__brand {
+  font-family: var(--ns-font-display);
+  color: var(--ns-color-primary);
+}
+
+.ns-block__links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.95rem;
+}
+
+.ns-block--hero {
+  padding: var(--ns-space-lg) 0 var(--ns-space-md);
+
+  h1 {
+    margin: 0 0 0.4rem;
+    font-family: var(--ns-font-display);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+  }
+
+  p {
+    margin: 0;
+    max-width: 32rem;
+    color: color-mix(in srgb, var(--ns-color-text) 72%, transparent);
+  }
+}
+
+.ns-block--text p {
+  margin: 0;
+  max-width: 40rem;
+}
+
+.ns-block--unknown {
+  padding: var(--ns-space-sm);
+  border: 1px dashed #b44;
+  color: #b44;
+  font-size: 0.9rem;
+}

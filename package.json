@@ -1,0 +1,22 @@
+{
+  "name": "newsite",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Builder open source gratuit pour créer un site sans code (thème + blocs)",
+  "license": "MIT",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @newsite/editor",
+    "dev:editor": "npm run dev -w @newsite/editor",
+    "dev:api": "npm run dev -w @newsite/api",
+    "build": "npm run build -w @newsite/editor",
+    "build:editor": "npm run build -w @newsite/editor",
+    "start:api": "npm run start -w @newsite/api"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
