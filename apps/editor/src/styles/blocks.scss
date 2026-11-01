@@ -6,6 +6,25 @@
   gap: var(--ns-space-md);
 }
 
+.ns-page__block {
+  border-radius: var(--ns-radius-md);
+  outline: 2px solid transparent;
+  outline-offset: 4px;
+  transition: outline-color 0.15s ease;
+
+  &--selectable {
+    cursor: pointer;
+  }
+
+  &--selected {
+    outline-color: color-mix(in srgb, var(--ns-color-primary) 65%, transparent);
+  }
+
+  &:focus-visible {
+    outline-color: var(--ns-color-primary);
+  }
+}
+
 .ns-block--nav {
   display: flex;
   flex-wrap: wrap;
