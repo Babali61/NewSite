@@ -1,0 +1,151 @@
+@use "@newsite/theme/tokens" as *;
+@use "./blocks";
+
+:root {
+  @include theme-css-variables($default-tokens);
+  color-scheme: light;
+  font-family: $font-body;
+  line-height: 1.5;
+  color: var(--ns-color-text);
+  background: var(--ns-color-surface);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(34, 116, 111, 0.12), transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, rgba(201, 122, 58, 0.1), transparent 50%),
+    var(--ns-color-surface);
+}
+
+.editor-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-header {
+  padding: 1.5rem 1.75rem 1rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--ns-color-text) 12%, transparent);
+}
+
+.editor-brand {
+  margin: 0;
+  font-family: $font-display;
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  letter-spacing: -0.03em;
+  color: var(--ns-color-primary);
+}
+
+.editor-tagline {
+  margin: 0.35rem 0 1rem;
+  max-width: 36rem;
+  color: color-mix(in srgb, var(--ns-color-text) 72%, transparent);
+}
+
+.editor-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.editor-actions button {
+  font: inherit;
+  padding: 0.55rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--ns-color-text) 18%, transparent);
+  border-radius: var(--ns-radius-md);
+  background: var(--ns-color-bg);
+  color: var(--ns-color-text);
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.editor-layout {
+  display: grid;
+  grid-template-columns: minmax(12rem, 16rem) 1fr minmax(12rem, 16rem);
+  gap: 1rem;
+  padding: 1rem 1.25rem 2rem;
+  flex: 1;
+}
+
+.editor-panel {
+  padding: 1rem;
+  border-radius: var(--ns-radius-md);
+  background: color-mix(in srgb, var(--ns-color-bg) 88%, white);
+  border: 1px solid color-mix(in srgb, var(--ns-color-text) 10%, transparent);
+
+  h2 {
+    margin: 0 0 0.4rem;
+    font-size: 1rem;
+    font-family: $font-display;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: color-mix(in srgb, var(--ns-color-text) 70%, transparent);
+  }
+}
+
+.editor-canvas {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.block-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.block-list__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--ns-radius-sm);
+  background: var(--ns-color-bg);
+  border: 1px dashed color-mix(in srgb, var(--ns-color-primary) 35%, transparent);
+  font-size: 0.85rem;
+}
+
+.block-list__index {
+  font-weight: 600;
+  color: var(--ns-color-primary);
+}
+
+.block-list__type {
+  font-family: $font-display;
+}
+
+.block-list__id {
+  opacity: 0.55;
+  font-size: 0.75rem;
+}
+
+.editor-preview {
+  flex: 1;
+  padding: 1.25rem;
+  border-radius: var(--ns-radius-lg);
+  background: var(--ns-color-bg);
+  border: 1px solid color-mix(in srgb, var(--ns-color-text) 10%, transparent);
+  box-shadow: 0 12px 40px rgba(20, 40, 40, 0.06);
+}
+
+@media (max-width: 900px) {
+  .editor-layout {
+    grid-template-columns: 1fr;
+  }
+}
