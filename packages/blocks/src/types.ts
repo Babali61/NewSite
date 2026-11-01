@@ -13,5 +13,6 @@ export type BlockDefinition = {
   type: BlockType;
   label: string;
   schema: BlockPropSchema;
+  defaultProps: Record<string, unknown>;
   component: ComponentType<{ props: Record<string, unknown> }>;
 };

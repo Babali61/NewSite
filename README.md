@@ -58,4 +58,6 @@ npm run dev:api      # API stub → http://localhost:3001
 
 ## Statut
 
-Squelette monorepo initial. Prochaines étapes : proto éditeur (3 blocs, tokens, @dnd-kit), puis API + SQLite et publish mock.
+Proto éditeur en cours : 3 blocs, tokens SCSS, réordonnancement `@dnd-kit`, panneau props + thème.
+
+Prochaines étapes : API + SQLite (CRUD site + lien magique), puis publish mock local.

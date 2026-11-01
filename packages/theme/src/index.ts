@@ -29,6 +29,20 @@ export const defaultThemeTokens: ThemeTokens = {
   fontBody: '"Source Sans 3", "Segoe UI", sans-serif',
 };
 
+/** Champs de thème exposés au panneau non-dev (labels humains). */
+export type ThemeTokenField = {
+  key: keyof ThemeTokens;
+  label: string;
+  kind: "color" | "text";
+};
+
+export const editableThemeFields: ThemeTokenField[] = [
+  { key: "colorPrimary", label: "Couleur principale", kind: "color" },
+  { key: "colorText", label: "Couleur du texte", kind: "color" },
+  { key: "colorBg", label: "Fond du site", kind: "color" },
+  { key: "colorSurface", label: "Fond de l’éditeur", kind: "color" },
+];
+
 /** Applique les tokens comme variables CSS sur `:root` (ou un élément cible). */
 export function applyThemeTokens(
   tokens: ThemeTokens,
